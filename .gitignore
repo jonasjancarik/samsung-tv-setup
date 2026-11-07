@@ -1,0 +1,12 @@
+work/
+__pycache__/
+*.py[cod]
+.env
+*.p12
+*.pfx
+*.pem
+*.key
+*.wgt
+*.apk
+*.tar.gz
+.DS_Store

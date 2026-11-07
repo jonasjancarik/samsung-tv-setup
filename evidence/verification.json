@@ -1,0 +1,30 @@
+{
+  "model": "UE43CU7172UXXH",
+  "ip": "10.0.0.150",
+  "targeted_packages": [
+    "adplatform",
+    "com.samsung.tv.acr-service-app",
+    "com.samsung.tv.iacr",
+    "com.samsung.tv.canalysis-service",
+    "com.samsung.tv.targeted-ad-service",
+    "com.samsung.tv.pisa-service",
+    "com.samsung.tizen.samsung-analytics",
+    "com.samsung.tv.coba.adagent"
+  ],
+  "executables_reversibly_renamed": 11,
+  "native_services_verified_masked_inactive_after_restart": [
+    "adagent-service.service",
+    "canalysis-service.service",
+    "pisa-service.service",
+    "contents-recognition-service.service",
+    "media-analytics-service.service"
+  ],
+  "cold_restart_confirmed": true,
+  "boot_after_restart": "f262c822-f9ad-4abc-8740-24ee14d89689",
+  "free_my_tv_automatic_launch_confirmed_in_boot_log": true,
+  "user_confirmed_ordinary_off_on_from_another_screen_opens_free_my_tv_within_15_seconds": true,
+  "tv_backup_directory": "/opt/usr/share/free-my-tv-setup",
+  "temporary_root_sessions_closed_and_staging_cleaned": true,
+  "implementation": "TV-local vendor boot hook and systemd-supervised startup worker; no host watchdog required",
+  "caveat": "Firmware/app updates may restore modified files; only the listed components were disabled."
+}
