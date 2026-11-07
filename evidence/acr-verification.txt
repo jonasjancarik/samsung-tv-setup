@@ -1,0 +1,19 @@
+=== BOOT ===
+1177040c-4cba-40ef-9a60-38a881d3363c
+239.95 357.56
+=== ACR EXECUTABLES ===
+/opt/usr/apps/com.samsung.tv.acr-service-app/bin/acr
+Original path absent
+5d7fc3791748a64235406a0dad81e0e95014441f7e0117a8a9fc702519c1da5a  /opt/usr/apps/com.samsung.tv.acr-service-app/bin/acr.freemytv-disabled
+/opt/usr/apps/com.samsung.tv.iacr/bin/iacr
+Original path absent
+d3c7b28b0e4be8ada07addbf038ca8b80bd7ce0edfbaf6402cb8c19be78f6c1b  /opt/usr/apps/com.samsung.tv.iacr/bin/iacr.freemytv-disabled
+=== RECORDED ORIGINAL HASHES ===
+5d7fc3791748a64235406a0dad81e0e95014441f7e0117a8a9fc702519c1da5a  /opt/usr/apps/com.samsung.tv.acr-service-app/bin/acr
+d3c7b28b0e4be8ada07addbf038ca8b80bd7ce0edfbaf6402cb8c19be78f6c1b  /opt/usr/apps/com.samsung.tv.iacr/bin/iacr
+=== APP FRAMEWORK STATE ===
+=== PROCESS EXECUTABLES ===
+=== REGISTERED PACKAGE PATHS ===
+com.samsung.tv.acr|/opt/usr/apps/com.samsung.tv.acr-service-app/bin/acr|false|true|/opt/usr/apps/com.samsung.tv.acr-service-app|com.samsung.tv.acr-service-app
+com.samsung.tv.iacr|/opt/usr/apps/com.samsung.tv.iacr/bin/iacr|false|false|/opt/usr/apps/com.samsung.tv.iacr|com.samsung.tv.iacr
+=== ALTERNATE PRELOAD PATHS ===

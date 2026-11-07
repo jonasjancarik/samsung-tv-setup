@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-07",
+  "model": "UE43CU7172UXXH",
+  "boot_id": "1177040c-4cba-40ef-9a60-38a881d3363c",
+  "uptime_seconds": 239.95,
+  "registered_original_executable_paths_absent": true,
+  "renamed_backup_hashes_match_recorded_originals": true,
+  "sha256": {
+    "/opt/usr/apps/com.samsung.tv.acr-service-app/bin/acr": "5d7fc3791748a64235406a0dad81e0e95014441f7e0117a8a9fc702519c1da5a",
+    "/opt/usr/apps/com.samsung.tv.iacr/bin/iacr": "d3c7b28b0e4be8ada07addbf038ca8b80bd7ce0edfbaf6402cb8c19be78f6c1b"
+  },
+  "acr_iacr_app_framework_entries_present": false,
+  "acr_iacr_process_executables_found": false,
+  "alternate_preload_roots_checked": [
+    "/usr/apps/com.samsung.tv.acr-service-app",
+    "/usr/apps/com.samsung.tv.iacr",
+    "/opt/usr/globalapps/com.samsung.tv.acr-service-app",
+    "/opt/usr/globalapps/com.samsung.tv.iacr"
+  ],
+  "alternate_preload_roots_found": false,
+  "continuous_early_boot_monitoring_performed": false,
+  "traffic_capture_performed": false,
+  "earlier_framework_entry_did_not_establish_executable_restoration": true,
+  "temporary_root_staging_cleaned": true,
+  "checked_system_file_hashes_unchanged": true
+}

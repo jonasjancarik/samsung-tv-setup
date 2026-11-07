@@ -22,6 +22,8 @@ Eight selected ad/tracking packages were blocked by reversibly renaming 11 execu
 
 Free My TV launched automatically after the restart. The initial implementation waited roughly 48 seconds for Samsung's local network API; the final worker launches independently of that API. The faster version was initially tested by restarting its worker and by standby wake. A subsequent full shutdown exposed a foreground-launch issue. The follow-up fix specifies the TV user and verifies native window focus; the user then confirmed automatic opening across full shutdowns. Cold startup still takes roughly 40–50 seconds. See the [validation record](docs/validation.md). The user then opened another screen, put the TV into standby, waited about 15 seconds and switched it on: Free My TV opened within about 15 seconds.
 
+A later [ACR/iACR check](docs/validation.md#acr-and-iacr-verification) confirmed that both original executable paths remained absent after cold boot, their renamed backups matched the recorded hashes, and neither process was running. Continuous early-boot execution and network traffic were not monitored.
+
 The startup hook and worker run on the TV. No always-on Mac or host-side root watchdog is required. These checks cover the targeted components; they do not establish that all telemetry or advertising has been eliminated. Firmware or app updates may restore modified files.
 
 ## Process
