@@ -1,0 +1,25 @@
+{
+  "model": "UE43CU7172UXXH",
+  "host": "10.0.0.150",
+  "runtime": "6.0",
+  "runtime_source": "explicit",
+  "authenticated": true,
+  "uid": 0,
+  "euid": 0,
+  "gid": 0,
+  "egid": 0,
+  "cap_eff": "0000003fffffffff",
+  "smack": "User",
+  "preflight_capabilities": "/usr/bin/dotnet cap_setgid,cap_sys_admin=ei\n/usr/sbin/sdbd-tarlauncher cap_setgid,cap_setuid=eip",
+  "commands": [
+    {
+      "command": "printf %s c2V0IC1ldQpEPS9vcHQvdXNyL3NoYXJlL2ZyZWUtbXktdHYtc2V0dXAKZWNobyAnPT09IEZJTkFMIENPTEQgQk9PVCA9PT0nCmNhdCAvcHJvYy9zeXMva2VybmVsL3JhbmRvbS9ib290X2lkCmNhdCAvcHJvYy91cHRpbWUKdGFpbCAtOSAiJEQvc3RhcnR1cC5sb2ciCmVjaG8gJz09PSBOQVRJVkUgRk9DVVMgQkVGT1JFIFJFU1RPUkUgPT09JwplbmxpZ2h0ZW5tZW50X2luZm8gLXRvcHZ3aW5zIHwgZ2F3ayAtZiAiJEQvZm9jdXMuYXdrIgp0ZXN0ICIkKHNoYTI1NnN1bSAiJEQvd29ya2VyLmJlZm9yZS1kZWZlcnJlZC1yZWxvYWQuc2giIHwgY3V0IC1kJyAnIC1mMSkiID0gNDQ4Njg3NGZjMTgwNzEzMThhODNjMWNkMGFjZjNlMmRkMThiOTk0MzBjODM2MmQxNmNlMzIxZDZiNTllZGVjNQpjcCAtcCAiJEQvd29ya2VyLmJlZm9yZS1kZWZlcnJlZC1yZWxvYWQuc2giICIkRC93b3JrZXIuc2giCnN5c3RlbWN0bCByZXN0YXJ0IC0tbm8tYmxvY2sgZnJlZS1teS10di1zdGFydHVwLnNlcnZpY2UKZWNobyAnPT09IEZJTkFMIENPTlRST0xTID09PScKZm9yIHUgaW4gYWRhZ2VudC1zZXJ2aWNlLnNlcnZpY2UgY2FuYWx5c2lzLXNlcnZpY2Uuc2VydmljZSBwaXNhLXNlcnZpY2Uuc2VydmljZSBjb250ZW50cy1yZWNvZ25pdGlvbi1zZXJ2aWNlLnNlcnZpY2UgbWVkaWEtYW5hbHl0aWNzLXNlcnZpY2Uuc2VydmljZTsgZG8gZWNobyAiJHUgJChzeXN0ZW1jdGwgaXMtYWN0aXZlICIkdSIpIjsgZG9uZQpzbGVlcCAyCnN5c3RlbWN0bCBzaG93IC1wIEFjdGl2ZVN0YXRlIC1wIFN1YlN0YXRlIGZyZWUtbXktdHYtc3RhcnR1cC5zZXJ2aWNlCmVjaG8gJ1JFU1RPUkVEX1ZFUklGSUVEX1ZFUlNJT05fMycK | base64 -d | /bin/bash",
+      "exit_code": 0,
+      "timed_out": false,
+      "stdout": "=== FINAL COLD BOOT ===\n1177040c-4cba-40ef-9a60-38a881d3363c\n134.30 46.63\nLAUNCH Sat Nov  7 19:04:53 UTC 2026 reason=boot user=5001\n... successfully launched pid = 504 with debug 0\nFOCUS_CONFIRMED Sat Nov  7 19:04:54 UTC 2026 window=0x01955908\nCONTROLS_READY Sat Nov  7 19:04:58 UTC 2026\nSTART Sat Nov  7 19:06:16 UTC 2026 uid=0 boot=1177040c-4cba-40ef-9a60-38a881d3363c version=4\nLAUNCH Sat Nov  7 19:06:28 UTC 2026 reason=boot user=5001\n... successfully launched pid = 469 with debug 0\nFOCUS_CONFIRMED Sat Nov  7 19:06:35 UTC 2026 window=0x02320d88\nCONTROLS_READY Sat Nov  7 19:06:48 UTC 2026\n=== NATIVE FOCUS BEFORE RESTORE ===\n0x02320d88|free\n=== FINAL CONTROLS ===\nadagent-service.service inactive\ncanalysis-service.service inactive\npisa-service.service inactive\ncontents-recognition-service.service inactive\nmedia-analytics-service.service inactive\nActiveState=active\nSubState=running\nRESTORED_VERIFIED_VERSION_3\n",
+      "stderr": ""
+    }
+  ],
+  "system_files_unchanged": true,
+  "staging_cleaned": true
+}

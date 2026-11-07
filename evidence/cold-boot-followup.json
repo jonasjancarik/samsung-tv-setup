@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-07",
+  "issue": "Full shutdown could leave Samsung Home visible despite a running Free My TV process.",
+  "fix": [
+    "Explicit TV user 5001",
+    "Native window-focus verification and activation",
+    "Bounded launch retries",
+    "Startup service registered without an initial daemon reload"
+  ],
+  "full_shutdown_opening_confirmed_by_user": true,
+  "boot_verified_before_last_timing_adjustment": "f6a5aec7-c3b3-4d0d-9bac-cd33276d8d0f",
+  "native_focus_before_last_timing_adjustment": "0x01955908|free",
+  "native_services_inactive_after_cold_boot": true,
+  "focus_parser_regression_tests_passed": 6,
+  "user_estimated_appearance_seconds_before_last_adjustment": 40,
+  "final_timing_test_pending": false,
+  "timing_experiment_reverted": true,
+  "user_observed_cold_start_seconds_approximate": [
+    40,
+    50
+  ],
+  "retained_worker_version": 3,
+  "latest_full_shutdown_focus_observed": "0x02320d88|free",
+  "latest_full_shutdown_boot": "1177040c-4cba-40ef-9a60-38a881d3363c",
+  "latest_boot_was_before_reverting_timing_experiment": true
+}

@@ -1,15 +1,10 @@
 set -eu
 D=/opt/usr/share/free-my-tv-setup
 [ ! -e "$D/disabled" ] || exit 0
-cat > /run/systemd/system/free-my-tv-startup.service <<'UNIT'
-[Unit]
-Description=Free My TV startup and ad service controls
-After=app-boot-manager.service
-[Service]
-Type=simple
-ExecStart=/usr/bin/gawk -f /opt/usr/share/free-my-tv-setup/worker.awk
-Restart=on-failure
-RestartSec=10
-UNIT
-systemctl daemon-reload
-systemctl start --no-block free-my-tv-startup.service
+# A transient service avoids a full daemon-reload on the cold-start path.
+# Keep compatibility with the old unit during a live update; /run clears at boot.
+if [ -f /run/systemd/system/free-my-tv-startup.service ]; then
+ systemctl start --no-block free-my-tv-startup.service
+else
+ systemd-run --no-block --unit=free-my-tv-startup --description='Free My TV startup and ad service controls' --property=After=app-boot-manager.service --property=Restart=on-failure --property=RestartSec=10s /usr/bin/gawk -f "$D/worker.awk"
+fi

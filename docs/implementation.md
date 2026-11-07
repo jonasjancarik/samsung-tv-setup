@@ -31,9 +31,9 @@ The stock `AT-HUB.service` executes `/opt/etc/parseinfo.sh` as root from writabl
 c6369e7dec69408e176daa252d436acf6f8e265f560504d8bd831c8023c71d61
 ```
 
-The original file is preserved at `/opt/usr/share/free-my-tv-setup/parseinfo.sh.stock`. Its replacement uses the signed `gawk` interpreter and preserves the vendor's `__REPO__MODEL` write to `/proc/target_version`. It then runs `bootstrap.sh`, which creates a transient `free-my-tv-startup.service` owned by systemd. That service runs the worker through a signed interpreter and stdin, rather than leaving a child of the temporary root session behind.
+The original file is preserved at `/opt/usr/share/free-my-tv-setup/parseinfo.sh.stock`. Its replacement uses the signed `gawk` interpreter and preserves the vendor's `__REPO__MODEL` write to `/proc/target_version`. It then runs `bootstrap.sh`, which registers a transient `free-my-tv-startup.service` through `systemd-run`. This avoids a full systemd reload before the worker can start. That service runs the worker through a signed interpreter and stdin, rather than leaving a child of the temporary root session behind.
 
-The worker reapplies the selected service masks, turns off TV Plus autorun, and starts Free My TV after an initial delay, retrying if needed. It also watches the TV's power timestamp, resume timing and local power-state API for subsequent wake-up events. TV Plus's Boolean setting accepts `0` and `1`, not the strings `false` and `true`.
+The worker reapplies the selected service masks and stops the selected services in a background task, turns off TV Plus autorun, and starts Free My TV explicitly in TV user session `5001`. It verifies focus through `enlightenment_info`, activates the app window if needed, and limits a failed launch sequence to 12 attempts. A short startup guard can recover focus from Samsung Home, but ends if another content app is selected. It also watches the TV's power timestamp, resume timing and local power-state API for subsequent wake-up events. TV Plus's Boolean setting accepts `0` and `1`, not the strings `false` and `true`.
 
 The hook creates persistent privileged startup behavior. It does not expose a new network listener, install a host watchdog, or globally disable signature enforcement. These observations do not make it a vendor-supported modification.
 
@@ -48,3 +48,7 @@ Three details mattered during the work:
 - Pipe staged scripts to Bash. The upstream adapter's dot-sourcing path did not reliably execute unsigned staged files on this firmware.
 
 Each root session checks its authenticated identity, closes the temporary agent, cleans its own staging files, and compares the hashes of `/etc/passwd` and `/usr/share/sdbd/public.pem`. “System files unchanged” in those reports refers to those two files; the approved boot hook and executable renames are intentional persistent changes.
+
+## Cold-boot follow-up
+
+A later full shutdown exposed a gap in the earlier standby test: a running process and a launch-success message did not establish that Free My TV was the foreground app. The HTTP API's `visible` field also disagreed with the native window manager. The corrected worker uses the native window list, an explicit user ID, and bounded retries rather than the CLI message alone. Launching for user `5001` and native window activation were verified on the TV before deployment.

@@ -20,7 +20,7 @@ This is evidence for this exact device and build, not a compatibility claim for 
 
 Eight selected ad/tracking packages were blocked by reversibly renaming 11 executable files. Five native services were confirmed masked and inactive after a manual restart. Existing streaming apps were retained.
 
-Free My TV launched automatically after the restart. The initial implementation waited roughly 48 seconds for Samsung's local network API; the final worker launches independently of that API. The faster version was tested by restarting its worker and by standby wake, without a further cold restart. The user then opened another screen, put the TV into standby, waited about 15 seconds and switched it on: Free My TV opened within about 15 seconds.
+Free My TV launched automatically after the restart. The initial implementation waited roughly 48 seconds for Samsung's local network API; the final worker launches independently of that API. The faster version was initially tested by restarting its worker and by standby wake. A subsequent full shutdown exposed a foreground-launch issue. The follow-up fix specifies the TV user and verifies native window focus; the user then confirmed automatic opening across full shutdowns. Cold startup still takes roughly 40–50 seconds. See the [validation record](docs/validation.md). The user then opened another screen, put the TV into standby, waited about 15 seconds and switched it on: Free My TV opened within about 15 seconds.
 
 The startup hook and worker run on the TV. No always-on Mac or host-side root watchdog is required. These checks cover the targeted components; they do not establish that all telemetry or advertising has been eliminated. Firmware or app updates may restore modified files.
 
@@ -62,6 +62,8 @@ python3 root-run.py setup/verify.sh work/verify.json
 ```
 
 Read every result before proceeding. Stop if a command fails, a checksum differs, or the output reports an unexpected executable path. `prepare.sh` refuses to overwrite an existing backup directory, and `install.sh` requires the original vendor hook's pinned checksum. Reboot manually, verify again, and test ordinary standby wake from a different app. Allow the app framework time to initialize during a cold start.
+
+Run the host focus-parser regression checks with `python3 -m unittest discover -s tests -v`.
 
 The shell files are supplied to the TV's signed interpreter through stdin. On this firmware, opening an unsigned script as a Bash filename fails its signature check, including `bash -n script.sh`; use `cat script.sh | bash -n` for an on-TV syntax check.
 
