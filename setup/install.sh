@@ -38,4 +38,3 @@ sleep 3
 cat "$D/bootstrap.log" 2>/dev/null || true
 systemctl show -p ActiveState -p SubState -p MainPID free-my-tv-startup.service
 printf 'INSTALL_COMPLETE\n'
-

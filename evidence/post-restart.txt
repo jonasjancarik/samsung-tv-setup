@@ -25,16 +25,16 @@ LAUNCH Sat Nov  7 10:47:40 UTC 2026 reason=power-on
 === APPS ===
 	  FreeMyTVio.FreeMyTV (541)
 === RELEVANT NATIVE SERVICES ===
-pisa-service.path                                                                                         masked    inactive dead       pisa-service.path                                                                    
-adagent-service.service                                                                                   masked    inactive dead       adagent-service.service                                                              
-canalysis-service.service                                                                                 masked    inactive dead       canalysis-service.service                                                            
-com.samsung.tv.multiscreen.service                                                                        loaded    inactive dead       Start com.samsung.tv.multiscreen service                                             
-com.samsung.tv.multiscreenboot.service                                                                    loaded    inactive dead       Start com.samsung.tv.multiscreen service                                             
-contents-recognition-service.service                                                                      masked    inactive dead       contents-recognition-service.service                                                 
-media-analytics-service.service                                                                           masked    inactive dead       media-analytics-service.service                                                      
-mirroring-recognition-manager.service                                                                     loaded    active   running    the mirroring recognition service daemon                                             
-pisa-service.service                                                                                      masked    inactive dead       pisa-service.service                                                                 
-pisa-service.socket                                                                                       masked    inactive dead       pisa-service.socket                                                                  
+pisa-service.path                                                                                         masked    inactive dead       pisa-service.path
+adagent-service.service                                                                                   masked    inactive dead       adagent-service.service
+canalysis-service.service                                                                                 masked    inactive dead       canalysis-service.service
+com.samsung.tv.multiscreen.service                                                                        loaded    inactive dead       Start com.samsung.tv.multiscreen service
+com.samsung.tv.multiscreenboot.service                                                                    loaded    inactive dead       Start com.samsung.tv.multiscreen service
+contents-recognition-service.service                                                                      masked    inactive dead       contents-recognition-service.service
+media-analytics-service.service                                                                           masked    inactive dead       media-analytics-service.service
+mirroring-recognition-manager.service                                                                     loaded    active   running    the mirroring recognition service daemon
+pisa-service.service                                                                                      masked    inactive dead       pisa-service.service
+pisa-service.socket                                                                                       masked    inactive dead       pisa-service.socket
 === LOCAL API ===
 {"device":{"EdgeBlendingSupport":"false","EdgeBlendingSupportGroup":"0","FrameTVSupport":"false","GamePadSupport":"true","ImeSyncedSupport":"true","Language":"cs_CZ","OS":"Tizen","PowerState":"on","To
 === POWERON KEY ===
