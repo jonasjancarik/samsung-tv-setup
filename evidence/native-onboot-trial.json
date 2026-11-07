@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-07",
+  "experiment": "Native on-boot registration for the existing Free My TV web UI app",
+  "database": "/opt/dbspace/.pkgmgr_parser.db",
+  "app_id": "FreeMyTVio.FreeMyTV",
+  "original": {
+    "app_onboot": "false",
+    "app_autorestart": "false"
+  },
+  "trial": {
+    "app_onboot": "true",
+    "app_autorestart": "false"
+  },
+  "scope": "Only the existing app_onboot field on one global application row was changed.",
+  "flag_survived_reboot": true,
+  "before_boot_id": "1177040c-4cba-40ef-9a60-38a881d3363c",
+  "trial_boot_id": "eb8a742a-1210-4461-9fa3-1ede99189c44",
+  "user_report": "About the same startup time as the preceding roughly 40\u201350 seconds.",
+  "native_boot_manager_start_seconds": 4.411744,
+  "native_boot_manager_exit_seconds": 25.126401,
+  "fallback_worker_start_seconds": 30.467709,
+  "independent_native_launch_proven": false,
+  "framework_boot_trace_available": false,
+  "restored": {
+    "app_onboot": "false",
+    "app_autorestart": "false"
+  },
+  "fallback_active_after_rollback": true,
+  "other_app_foreground_at_final_read_only_check": true,
+  "startup_guard_stood_down_for_other_app": true,
+  "temporary_root_staging_cleaned": true,
+  "checked_system_file_hashes_unchanged": true
+}

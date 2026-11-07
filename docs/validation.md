@@ -45,3 +45,13 @@ python3 root-run.py setup/verify-acr.sh work/acr-verification.json
 ```
 
 See the [captured output](../evidence/acr-verification.txt) for paths, hashes and package registration details.
+
+## Native on-boot registration trial
+
+While the TV was available for testing, Free My TV was found only in the global package database, registered as `webapp` / `uiapp` with `app_onboot=false` and `app_autorestart=false`. A backed-up trial changed only its `app_onboot` field to `true`, retaining the existing fallback and autorestart setting.
+
+After the controlled restart, the flag was still `true`, but the user reported about the same startup time. Samsung's app boot manager ran from about 4.4 to 25.1 seconds after kernel boot; the fallback worker started at about 30.5 seconds. No framework trace established a separate earlier native launch. This test shows no demonstrated benefit from the single UI-app flag change; it does not establish whether the platform ignored that flag or started the app without improving its visible readiness.
+
+The trial was rolled back to `app_onboot=false` and `app_autorestart=false`. The fallback remained active. The final read-only focus check showed another app in front, and the startup guard had logged that it stood down for that app. No further viewing-time experiments were performed. See the [trial record](../evidence/native-onboot-trial.json).
+
+For future research, Samsung's [prelaunch documentation](https://developer.samsung.com/smarttv/develop/guides/fundamentals/prelaunching-applications.html) says its supported prelaunch feature ended with 2019 models. Samsung also [requires TV web apps to retain background-support disabled](https://developer.samsung.com/smarttv/develop/faq/other-features.html). Native boot flags are a separate mechanism; other models' results do not prove earlier startup for this TV's web UI app.
